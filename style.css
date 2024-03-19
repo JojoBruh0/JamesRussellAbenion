@@ -1,0 +1,31 @@
+footer {
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.profile-container {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    width: 100%; /* Adjust as needed */
+    height: 50vh; 
+}
+
+.profile-image {
+    width: 350px; /* Adjust as needed */
+    height: 350px; /* Adjust as needed */
+    border-radius: 50%; /* Makes the image round (for a circular profile image) */
+    object-fit: cover; /* Adjusts how the image is resized to fit its container */
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+
+.profile-image:hover {
+    transform: scale(1.1); /* Increase the size of the image on hover */
+    
+}
