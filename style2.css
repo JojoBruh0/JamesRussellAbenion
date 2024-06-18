@@ -2,11 +2,22 @@
     margin: 0;
     padding: 0;
     background: #34495e;
+    font-family: Arial, sans-serif;
   }
+
+  img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%; 
+
+
+}
+
   .slidershow {
-    width: 700px;
-    height: 400px;
+    max-width: 100%;
+    height: auto;
     overflow: hidden;
+     position: relative;
   }
 
   .middle {
@@ -22,13 +33,15 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 .bar {
-  width: 50px;
-  height: 10px;
+  width: 30px;
+  height:  50px;
   border: 2px solid #fff;
-  margin: 6px;
+  margin: 1px;
   cursor: pointer;
   transition: 0.4s;
 }
@@ -45,6 +58,7 @@ input[name="r"] {
   width: 500%;
   height: 100%;
   display: flex;
+  
 }
 
 .slide { 
@@ -54,7 +68,8 @@ input[name="r"] {
 
 .slide img{
   width: 100%;
-  height: 100%;
+  height: auto;
+  border-radius: 50%;
 }
 
 #r1:checked ~ .s1{
@@ -74,78 +89,65 @@ input[name="r"] {
 }
 
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
+/* Footer Styles */
 footer {
   background-color: black;
+  width: 100%;
   position: absolute;
   bottom: 0;
-  width: 100%;
 }
 
 .footerContainer {
-  width: 100%;
-  padding: 5px 5px 5px;
-}
-.socialIcons {
+  padding: 5px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.socialIcons a{
+.socialIcons a {
   text-decoration: none;
-  padding: 10px;
-  background-color: white;
-  margin: 10px;
+  padding: 5px;
+  margin: 7px;
   border-radius: 50%;
-}
-
-.socialIcons a i{
-  font-size: 2em;
+  background-color: white;
   color: black;
+  font-size: 2em;
   opacity: 0.9;
+  transition: background-color 0.5s, color 0.5s;
 }
 
-/* Hover Effects On Social Media IconS */
 .socialIcons a:hover {
   background-color: #111;
-  transition: 0.5s;
-}
-
-.socialIcons a:hover {
   color: white;
-  transition: 0.5s;
 }
 
 .footerBottom {
   background-color: #000;
   padding: 20px;
   text-align: center;
-  }
-.footerBottom p { 
-  color: white;
-  }
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
 }
 
+.footerBottom p {
+  color: white;
+}
+
+/* Sidebar Styles */
 .container {
   height: 100%;
   width: 250px;
-  position: absolute;
-  background: transparent;
+  position: fixed;
+  background: black;
   box-shadow: 0 2px 10px green;
   z-index: 1;
   transition: 0.5s ease;
-  transform: translateX(-250px); 
+  transform: translateX(-250px);
 }
 
 .container .head {
@@ -157,19 +159,15 @@ footer {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 3px;
-  background: linear-gradient(30deg,black,green);
+  background: linear-gradient(30deg, black, green);
 }
 
-ol{
-  width: 100%;
+ol {
   list-style: none;
-}
-ol li{
-  display: block;
-  width: 100%;  
+  padding: 0;
 }
 
-ol li a{
+ol li a {
   color: #ffffff;
   padding: 15px 10px;
   text-decoration: none;
@@ -188,16 +186,13 @@ ol li a i {
   padding-left: 30px;
 }
 
-ol li:hover a{
+ol li a:hover {
   background: #030303;
   color: green;
   letter-spacing: 5px;
-
 }
 
 input {
-  -webkit-apperance: none;
-  visibility: hidden;
   display: none;
 }
 
@@ -208,7 +203,7 @@ span {
   font-size: 25px;
   border-radius: 3px;
   color: white;
-  padding: 3px, 8px;
+  padding: 3px 8px;
   cursor: pointer;
   background: #000;
 }
@@ -216,9 +211,11 @@ span {
 #bars {
   background: green;
 }
+
 #check:checked ~ .container {
   transform: translateX(0);
 }
+
 #check:checked ~ .container #bars {
   display: none;
 }
