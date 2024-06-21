@@ -33,15 +33,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get existing users from localStorage
             let users = JSON.parse(localStorage.getItem('users')) || [];
 
-            // Check if username already exists
-            if (users.find(user => user.username === username)) {
+            // Check if username or email already exists
+            if (users.some(user => user.username === username)) {
                 alert('Username already exists.');
                 return;
             }
-            
-            if (users.find(user => user.email === email)) {
+
+            if (users.some(user => user.email === email)) {
                 alert('Email already exists.');
                 return;
+            }
 
             // Add new user to the array
             const newUser = {
@@ -63,22 +64,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if (loginForm) {
         loginForm.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the form from submitting
-    
+
             // Retrieve input values
-            const username = loginForm.elements.email.value; // Assuming the email field is used for username
+            const username = loginForm.elements.username.value; // Corrected to 'username'
             const password = loginForm.elements.password.value;
-    
+
             // Validate inputs
             if (!username || !password) {
                 alert('Both fields are required.');
                 return;
             }
-    
+
             // Get existing users from localStorage
             let users = JSON.parse(localStorage.getItem('users')) || [];
-    
+
             // Check if user exists and password matches
-            const user = users.find(user => user.email === username && user.password === password); // Assuming the email is used as the username
+            const user = users.find(user => user.username === username && user.password === password);
             if (user) {
                 alert('Login successful!');
                 window.location.href = 'index2.html'; // Redirect to index.html on successful login
