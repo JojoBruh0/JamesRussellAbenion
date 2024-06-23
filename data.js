@@ -38,15 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Username already exists.');
                 return;
             }
-            
-            if (users.find(user => user.email === email)) {
-                alert('Email already exists.');
-                return;
 
             // Add new user to the array
             const newUser = {
                 email: email,
-                username: username,
                 password: password // Note: Never store passwords in plain text in a real application
             };
             users.push(newUser);
