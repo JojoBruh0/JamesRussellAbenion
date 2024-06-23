@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
             let users = JSON.parse(localStorage.getItem('users')) || [];
 
             // Check if username already exists
-            if (users.find(user => user.username === username)) {
-                alert('Username already exists.');
+            if (users.find(user => user.email === email)) {
+                alert('email already exists.');
                 return;
             }
 
