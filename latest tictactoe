@@ -1,0 +1,371 @@
+Public Class Form1
+    Dim q As Boolean
+    Private xScore As Integer = 0
+    Private oScore As Integer = 0
+    Private Sub Buttons(sender As Object, e As EventArgs) Handles Button1.Click, Button2.Click, Button3.Click, Button4.Click, Button5.Click, Button6.Click, Button7.Click, Button8.Click, Button9.Click
+        If q = False Then
+            CType(sender, Button).Text = "X"
+            q = True
+            CType(sender, Button).Enabled = False
+        Else
+            CType(sender, Button).Text = "O"
+            q = False
+            CType(sender, Button).Enabled = False
+        End If
+
+        iWinner()
+    End Sub
+
+    Private Sub iWinner()
+        Dim winningPatterns As Integer = 0
+
+        If Button1.Text = "X" And Button2.Text = "X" And Button3.Text = "X" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player X Wins!", MsgBoxStyle.Information)
+                Label2.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button4.Text = "X" And Button5.Text = "X" And Button6.Text = "X" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player X Wins!", MsgBoxStyle.Information)
+                Label2.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button7.Text = "X" And Button8.Text = "X" And Button9.Text = "X" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player X Wins!", MsgBoxStyle.Information)
+                Label2.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button1.Text = "X" And Button4.Text = "X" And Button7.Text = "X" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player X Wins!", MsgBoxStyle.Information)
+                Label2.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button2.Text = "X" And Button5.Text = "X" And Button8.Text = "X" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player X Wins!", MsgBoxStyle.Information)
+                Label2.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button3.Text = "X" And Button6.Text = "X" And Button9.Text = "X" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player X Wins!", MsgBoxStyle.Information)
+                Label2.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button1.Text = "X" And Button5.Text = "X" And Button9.Text = "X" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player X Wins!", MsgBoxStyle.Information)
+                Label2.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button3.Text = "X" And Button5.Text = "X" And Button7.Text = "X" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player X Wins!", MsgBoxStyle.Information)
+                Label2.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+
+
+        If Button1.Text = "O" And Button2.Text = "O" And Button3.Text = "O" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player O Wins!", MsgBoxStyle.Information)
+                Label4.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+            If Button4.Text = "O" And Button5.Text = "O" And Button6.Text = "O" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player O Wins!", MsgBoxStyle.Information)
+                Label4.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button7.Text = "O" And Button8.Text = "O" And Button9.Text = "O" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player O Wins!", MsgBoxStyle.Information)
+                Label4.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button1.Text = "O" And Button4.Text = "O" And Button7.Text = "O" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player O Wins!", MsgBoxStyle.Information)
+                Label4.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button2.Text = "O" And Button5.Text = "O" And Button8.Text = "O" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player O Wins!", MsgBoxStyle.Information)
+                Label4.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button3.Text = "O" And Button6.Text = "O" And Button9.Text = "O" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player O Wins!", MsgBoxStyle.Information)
+                Label4.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+        If Button1.Text = "O" And Button5.Text = "O" And Button9.Text = "O" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player O Wins!", MsgBoxStyle.Information)
+                Label4.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If Button3.Text = "O" And Button5.Text = "O" And Button7.Text = "O" Then
+            If winningPatterns = 0 Then
+                MsgBox("Player O Wins!", MsgBoxStyle.Information)
+                Label4.Text += 1
+                Stopped()
+                winningPatterns += 1
+            End If
+        End If
+
+        If CInt(Label2.Text) >= 3 Then ' Set the maximum number of wins to 3
+            MsgBox("Player X has reached the maximum number of wins!", MsgBoxStyle.Information)
+            ' Reset the game or perform any other necessary actions
+            Stopped()
+        End If
+
+        If CInt(Label4.Text) >= 3 Then ' Set the maximum number of wins to 3
+            MsgBox("Player O has reached the maximum number of wins!", MsgBoxStyle.Information)
+            ' Reset the game or perform any other necessary actions
+            Stopped()
+        End If
+
+        If Button1.Text <> "" And Button2.Text <> "" And Button3.Text <> "" And
+            Button4.Text <> "" And Button5.Text <> "" And Button6.Text <> "" And
+            Button7.Text <> "" And Button8.Text <> "" And Button9.Text <> "" And
+            winningPatterns = 0 Then
+            MsgBox("It's a Tie!", MsgBoxStyle.Information)
+            Label5.Text += 1 ' Increment the Tie label score
+            Stopped()
+        End If
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Button1.Text = ""
+        Button2.Text = ""
+        Button3.Text = ""
+        Button4.Text = ""
+        Button5.Text = ""
+        Button6.Text = ""
+        Button7.Text = ""
+        Button8.Text = ""
+        Button9.Text = ""
+
+        Button1.Enabled = False
+        Button2.Enabled = False
+        Button3.Enabled = False
+        Button4.Enabled = False
+        Button5.Enabled = False
+        Button6.Enabled = False
+        Button7.Enabled = False
+        Button8.Enabled = False
+        Button9.Enabled = False
+
+        Button10.Enabled = True
+
+        Button11.Enabled = False
+
+        Button13.Enabled = False
+        Button14.Enabled = False
+
+        Label1.Enabled = True
+        Label2.Enabled = True
+        Label3.Enabled = True
+        Label4.Enabled = True
+        Label5.Enabled = True
+
+        Stopped()
+    End Sub
+
+    Private Sub Stopped()
+        Button1.Enabled = False
+        Button2.Enabled = False
+        Button3.Enabled = False
+        Button4.Enabled = False
+        Button5.Enabled = False
+        Button6.Enabled = False
+        Button7.Enabled = False
+        Button8.Enabled = False
+        Button9.Enabled = False
+
+        PictureBox1.Enabled = False
+        PictureBox2.Enabled = False
+
+
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Button1.Enabled = True
+        Button2.Enabled = True
+        Button3.Enabled = True
+        Button4.Enabled = True
+        Button5.Enabled = True
+        Button6.Enabled = True
+        Button7.Enabled = True
+        Button8.Enabled = True
+        Button9.Enabled = True
+        Button10.Enabled = False
+        Button11.Enabled = True
+        Button12.Enabled = True
+
+        Button13.Enabled = False
+        Button14.Enabled = False
+        Button15.Enabled = True
+
+        Label1.Enabled = True
+        Label2.Enabled = True
+        Label3.Enabled = True
+        Label4.Enabled = True
+        Label5.Enabled = True
+
+
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Button1.Enabled = False
+        Button2.Enabled = False
+        Button3.Enabled = False
+        Button4.Enabled = False
+        Button5.Enabled = False
+        Button6.Enabled = False
+        Button7.Enabled = False
+        Button8.Enabled = False
+        Button9.Enabled = False
+        Button11.Enabled = False
+        Button12.Enabled = False
+
+        Button15.Enabled = False
+
+        Label1.Enabled = False
+        Label2.Enabled = False
+        Label3.Enabled = False
+        Label4.Enabled = False
+        Label5.Enabled = False
+
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        OpenFileDialog1.Filter = "Image |*.png;*.jpg;*.bmp"
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+            PictureBox1.Image = Image.FromFile(OpenFileDialog1.FileName)
+        End If
+
+    End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        OpenFileDialog1.Filter = "Image |*.png;*.jpg;*.bmp"
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+            PictureBox2.Image = Image.FromFile(OpenFileDialog1.FileName)
+        End If
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Dim response As MsgBoxResult
+        response = MsgBox("Do you want to close the application?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirm Exit")
+
+        If response = MsgBoxResult.Yes Then
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        StartNewGame()
+        ResetScores()
+    End Sub
+
+    ' Method to start a new game
+    Private Sub StartNewGame()
+        MessageBox.Show("New game started!")
+        ' Here you can add logic to reset the game board if needed
+    End Sub
+
+    ' Method to reset scores
+    Private Sub ResetScores()
+        xScore = 0
+        oScore = 0
+        Label2.Text = " " & xScore.ToString()
+        Label4.Text = " " & oScore.ToString()
+
+
+        Button1.Text = ""
+        Button2.Text = ""
+        Button3.Text = ""
+        Button4.Text = ""
+        Button5.Text = ""
+        Button6.Text = ""
+        Button7.Text = ""
+        Button8.Text = ""
+        Button9.Text = ""
+
+        Button1.Enabled = False
+        Button2.Enabled = False
+        Button3.Enabled = False
+        Button4.Enabled = False
+        Button5.Enabled = False
+        Button6.Enabled = False
+        Button7.Enabled = False
+        Button8.Enabled = False
+        Button9.Enabled = False
+
+        Button10.Enabled = True
+
+        Button11.Enabled = False
+        Button15.Enabled = False
+
+        Button13.Enabled = True
+        Button14.Enabled = True
+
+        PictureBox1.Image = Nothing
+        PictureBox2.Image = Nothing
+
+        Stopped()
+    End Sub
+End Class
